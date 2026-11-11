@@ -300,3 +300,11 @@ nav {
         max-width: 280px;
     }
 }
+.category-card.static-card {
+    cursor: default;
+}
+.category-card.static-card:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+}
