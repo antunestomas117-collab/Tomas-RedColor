@@ -81,7 +81,8 @@ nav a:hover {
 .social-card:hover {
     transform: translateY(-5px);
     border-color: #e50914;
-}.profile-img {
+}
+.profile-img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
@@ -89,4 +90,17 @@ nav a:hover {
     margin-bottom: 20px;
     object-fit: cover;
     box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+.tiktok-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.tiktok-container iframe {
+    width: 325px;
+    height: 580px;
+    border-radius: 12px;
+    border: 2px solid #e50914;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
 }
