@@ -2,186 +2,286 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-    background-color: #0f0f0f;
+    background-color: #09090b;
     color: #ffffff;
-    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.bg-glow {
+    position: fixed;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(229, 9, 20, 0.22) 0%, rgba(9, 9, 11, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: #181818;
-    border-bottom: 2px solid #e50914;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    max-width: 900px;
+    width: 92%;
+    margin: 20px auto 0;
+    padding: 14px 28px;
+    background: rgba(24, 24, 27, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
-.logo span {
+.logo span, .red-text {
     color: #e50914;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #e50914;
-}
-
-.hero-grid {
-    min-height: 80vh;
+nav {
     display: flex;
-    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #a1a1aa;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-btn.active {
+    background: #e50914;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.container {
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px 20px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page {
+    display: none;
+    width: 100%;
     text-align: center;
-    padding: 50px 20px;
+    animation: fadeIn 0.4s ease forwards;
 }
 
-.hero-grid h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
+.page.active {
+    display: block;
 }
 
-.hero-grid p {
-    color: #aaaaaa;
-    margin-bottom: 40px;
-    font-size: 18px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 900px;
+.hero-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 8px;
 }
 
-.menu-card {
-    background-color: #1a1a1a;
-    border: 2px solid #333;
-    border-radius: 15px;
-    width: 220px;
-    padding: 25px 20px;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-
-.menu-card img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 2px solid #e50914;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-.menu-card h3 {
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-
-.menu-card:hover {
-    transform: translateY(-8px);
-    border-color: #e50914;
-    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
-}
-
-.section {
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.dark-box {
-    background-color: #141414;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-}
-
-.section h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-.section p {
-    color: #cccccc;
+.hero-header p, .subtitle {
+    color: #a1a1aa;
     font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto 20px;
+    margin-bottom: 35px;
 }
 
-/* TikTok */
-.tiktok-container {
+.cards-grid {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.tiktok-container iframe {
-    width: 325px;
-    height: 580px;
-    border-radius: 12px;
-    border: 2px solid #e50914;
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    gap: 25px;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
-.btn {
+.category-card {
+    background: linear-gradient(145deg, #141417, #0e0e11);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    width: 240px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    border-color: #e50914;
+    box-shadow: 0 15px 35px rgba(229, 9, 20, 0.25);
+}
+
+.card-img-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(229, 9, 20, 0.5);
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .card-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.category-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.category-card span {
+    font-size: 13px;
+    color: #e50914;
+    font-weight: 600;
+}
+
+.profile-card, .info-box {
+    background: rgba(24, 24, 27, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 40px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.main-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #e50914;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.4);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.action-btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 12px 30px;
-    background-color: #e50914;
+    padding: 14px 28px;
+    background: #e50914;
     color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 700;
+    border-radius: 14px;
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #b20710;
-    transform: scale(1.05);
+.action-btn:hover {
+    background: #c80711;
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(229, 9, 20, 0.35);
 }
 
-.discord-btn {
-    background-color: #5865F2;
+.action-btn.discord {
+    background: #5865F2;
 }
 
-.discord-btn:hover {
-    background-color: #4752C4;
+.action-btn.discord:hover {
+    background: #4752C4;
+    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.35);
 }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #0a0a0a;
-    color: #777777;
+.action-btn.tiktok {
+    background: #18181b;
+    border: 1px solid #3f3f46;
+}
+
+.action-btn.tiktok:hover {
+    border-color: #ffffff;
+    background: #27272a;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 25px;
     font-size: 14px;
-    border-top: 1px solid #222;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tiktok-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.tiktok-wrapper iframe {
+    width: 325px;
+    height: 575px;
+    border-radius: 20px;
+    border: 2px solid #e50914;
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.25);
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 24px;
+        padding: 15px;
+    }
+    .hero-header h1 {
+        font-size: 32px;
+    }
+    .category-card {
+        width: 100%;
+        max-width: 300px;
+    }
 }

@@ -8,62 +8,130 @@
 </head>
 <body>
 
+    <div class="bg-glow"></div>
+
     <header>
         <div class="logo">Tomas <span>RedColor</span></div>
         <nav>
-            <a href="#home">Início</a>
-            <a href="#videos">TikTok</a>
-            <a href="#perfil-tiktok">Perfil</a>
-            <a href="#sugestoes">Sugestões</a>
+            <button class="nav-btn active" onclick="mudarPagina('inicio', this)">Início</button>
+            <button class="nav-btn" onclick="mudarPagina('tiktok', this)">Vídeos</button>
+            <button class="nav-btn" onclick="mudarPagina('perfil', this)">Redes</button>
+            <button class="nav-btn" onclick="mudarPagina('sugestoes', this)">Sugestões</button>
         </nav>
     </header>
 
-    <section id="home" class="hero-grid">
-        <h1>Bem-vindo ao meu Universo</h1>
-        
-        <div class="card-container">
-            <a href="#server" class="menu-card">
-                <img src="server.png.png" alt="Server">
-                <h3>Server</h3>
-            </a>
-            <a href="#gang" class="menu-card">
-                <img src="gang.png.png" alt="Gang">
-                <h3>Gang</h3>
-            </a>
-            <a href="#skin" class="menu-card">
-                <img src="skin.png.png" alt="Skin">
-                <h3>Skin</h3>
-            </a>
-        </div>
-    </section>
+    <main class="container">
 
-    <section id="videos" class="section">
-        <h2>Vídeo em Destaque</h2>
-        <div class="tiktok-container">
-            <iframe height="578" width="325" src="https://www.tiktok.com/player/v1/7705437248279383318?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" title="Video 1(1)" allowfullscreen loading="lazy"></iframe>
-        </div>
-    </section>
+        <section id="inicio" class="page active">
+            <div class="hero-header">
+                <h1>Tomas <span class="red-text">RedColor</span></h1>
+                <p>Escolhe uma categoria para explorar</p>
+            </div>
 
-    <section id="perfil-tiktok" class="section dark-box">
-        <h2>As Minhas Redes</h2>
-        <p>Segue-me no TikTok e junta-te à minha comunidade no Discord!</p>
-        
-        <div class="buttons-container">
-            <a href="https://www.tiktok.com/@tomas_redcolor" class="btn tiktok-btn" target="_blank">📱 Seguir no TikTok</a>
-            
-            <a href="https://discord.gg/b4JzFr6Qu" class="btn discord-btn" target="_blank">💬 Entrar no Discord</a>
-        </div>
-    </section>
+            <div class="cards-grid">
+                <div class="category-card" onclick="mudarPagina('server')">
+                    <div class="card-img-wrapper">
+                        <img src="server.png.png" alt="Server">
+                    </div>
+                    <h3>SERVER</h3>
+                    <span>Explorar &rarr;</span>
+                </div>
 
-    <section id="sugestoes" class="section">
-        <h2>Caixa de Sugestões</h2>
-        <p>Tens alguma ideia para um próximo vídeo ou melhoria para o site?</p>
-        <a href="antunestomas117@gmail.com" class="btn">💡 Enviar Sugestão</a>
-    </section>
+                <div class="category-card" onclick="mudarPagina('gang')">
+                    <div class="card-img-wrapper">
+                        <img src="gang.png.png" alt="Gang">
+                    </div>
+                    <h3>GANG</h3>
+                    <span>Explorar &rarr;</span>
+                </div>
 
-    <footer>
-        <p>&copy; 2026 Tomas RedColor. Todos os direitos reservados.</p>
-    </footer>
+                <div class="category-card" onclick="mudarPagina('skin')">
+                    <div class="card-img-wrapper">
+                        <img src="skin.png.png" alt="Skin">
+                    </div>
+                    <h3>SKIN</h3>
+                    <span>Explorar &rarr;</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="server" class="page">
+            <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
+            <h2>Área do <span class="red-text">Server</span></h2>
+            <p class="subtitle">Informações, regras e acesso direto ao servidor oficial.</p>
+            <div class="info-box">
+                <a href="https://discord.gg/xYn4Wjnp7" target="_blank" class="action-btn discord">Entrar no Discord do ATHOS PvP</a>
+            </div>
+        </section>
+
+        <section id="gang" class="page">
+            <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
+            <div class="info-box">
+                <p>Queres fazer parte da equipa? Entra no nosso Discord e abre ticket para recrutamento.</p>
+                <a href="https://discord.gg/UuJv9BWyD" target="_blank" class="action-btn">
+            </div>
+        </section>
+
+        <section id="skin" class="page">
+            <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
+            <h2>Galeria de <span class="red-text">Skins</span></h2>
+            <p class="subtitle">A minha skin do ATHOS Pvp.</p>
+            <div class="info-box">
+            </div>
+        </section>
+
+        <section id="tiktok" class="page">
+            <h2>Vídeo em <span class="red-text">Destaque</span></h2>
+            <p class="subtitle">O meu clipe mais recente diretamente do TikTok</p>
+            <div class="tiktok-wrapper">
+                <iframe height="578" width="325" src="https://www.tiktok.com/player/v1/7705437248279383318?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" title="Video 1(1)" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section id="perfil" class="page">
+            <div class="profile-card">
+                <img src="perfil.png" alt="Tomas RedColor" class="main-avatar">
+                <h2>Tomas <span class="red-text">RedColor</span></h2>
+                <p class="subtitle">Criador de conteúdo & Gaming. Acompanha-me nas redes oficiais e na minha comunidade do Discord:</p>
+                
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@tomas_redcolor" target="_blank" class="action-btn tiktok">
+                        📱 Seguir no TikTok
+                    </a>
+                    <a href="https://discord.gg/b4JzFr6Qu" target="_blank" class="action-btn discord">
+                        💬 Entrar no Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sugestoes" class="page">
+            <div class="profile-card">
+                <h2>Caixa de <span class="red-text">Sugestões</span></h2>
+                <p class="subtitle">Tens alguma ideia para um vídeo, melhoria para o site ou sugestão de servidores de pvp?</p>
+                <a href="antunestomas117@gmail.com" class="action-btn">💡 Enviar Sugestão</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function mudarPagina(idPagina, botaoClicado = null) {
+            // Esconde todas as páginas
+            const paginas = document.querySelectorAll('.page');
+            paginas.forEach(p => p.classList.remove('active'));
+
+            // Mostra apenas a página escolhida
+            document.getElementById(idPagina).classList.add('active');
+
+            // Atualiza o destaque no menu de cima
+            const botoes = document.querySelectorAll('.nav-btn');
+            botoes.forEach(b => b.classList.remove('active'));
+            if (botaoClicado) {
+                botaoClicado.classList.add('active');
+            }
+        }
+    </script>
 
 </body>
 </html>
