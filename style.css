@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,6 +19,9 @@ header {
     padding: 20px 50px;
     background-color: #181818;
     border-bottom: 2px solid #e50914;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -25,7 +29,7 @@ header {
     font-weight: bold;
 }
 
-.logo span, .highlight {
+.logo span {
     color: #e50914;
 }
 
@@ -34,67 +38,102 @@ nav a {
     text-decoration: none;
     margin-left: 20px;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 nav a:hover {
     color: #e50914;
 }
 
-.hero {
-    height: 50vh;
+.hero-grid {
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 50px 20px;
 }
 
-.hero h1 {
-    font-size: 40px;
+.hero-grid h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero-grid p {
+    color: #aaaaaa;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+}
+
+.menu-card {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 15px;
+    width: 220px;
+    padding: 25px 20px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.menu-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #e50914;
+    object-fit: cover;
     margin-bottom: 15px;
 }
 
+.menu-card h3 {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    border-color: #e50914;
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
+}
+
 .section {
-    padding: 50px 20px;
+    padding: 70px 20px;
     text-align: center;
 }
 
-.links-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+.dark-box {
+    background-color: #141414;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
 }
 
-.social-card {
-    padding: 15px 30px;
-    background-color: #1f1f1f;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid #333;
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.social-card:hover {
-    transform: translateY(-5px);
-    border-color: #e50914;
-}
-.profile-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 3px solid #e50914;
+.section h2 {
+    font-size: 30px;
     margin-bottom: 20px;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    color: #ffffff;
 }
+
+.section p {
+    color: #cccccc;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+/* TikTok */
 .tiktok-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .tiktok-container iframe {
@@ -103,4 +142,46 @@ nav a:hover {
     border-radius: 12px;
     border: 2px solid #e50914;
     box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 30px;
+    background-color: #e50914;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #b20710;
+    transform: scale(1.05);
+}
+
+.discord-btn {
+    background-color: #5865F2;
+}
+
+.discord-btn:hover {
+    background-color: #4752C4;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #0a0a0a;
+    color: #777777;
+    font-size: 14px;
+    border-top: 1px solid #222;
 }
