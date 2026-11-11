@@ -15,7 +15,7 @@
         <nav>
             <button class="nav-btn active" onclick="mudarPagina('inicio', this)">Início</button>
             <button class="nav-btn" onclick="mudarPagina('tiktok', this)">Vídeos</button>
-            <button class="nav-btn" onclick="mudarPagina('perfil', this)">Redes</button>
+            <button class="nav-btn" onclick="mudarPagina('perfil', this)">Redes Sociais</button>
             <button class="nav-btn" onclick="mudarPagina('sugestoes', this)">Sugestões</button>
         </nav>
     </header>
@@ -56,35 +56,39 @@
         </section>
 
         <section id="server" class="page">
-            <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
-            <h2>Área do <span class="red-text">Server</span></h2>
-            <p class="subtitle">Informações, regras e acesso direto ao servidor oficial.</p>
             <div class="info-box">
-                <a href="https://discord.gg/xYn4Wjnp7" target="_blank" class="action-btn discord">Entrar no Discord do ATHOS PvP</a>
+                <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
+                <h2>Área do <span class="red-text">Server</span></h2>
+                <p class="subtitle">Acesso direto ao servidor oficial.</p>
+                <p class="desc-text">Entra na comunidade do Discord do ATHOS PvP para ficares a par de todas as novidades do servidor.</p>
+                <a href="https://discord.gg/xYn4Wjnp7" target="_blank" class="action-btn discord">Entrar no Discord do Server</a>
             </div>
         </section>
 
         <section id="gang" class="page">
-            <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
             <div class="info-box">
-                <p>Queres fazer parte da equipa? Entra no nosso Discord e abre ticket para recrutamento.</p>
-                <a href="https://discord.gg/UuJv9BWyD" target="_blank" class="action-btn">
+                <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
+                <h2>Área da <span class="red-text">Gang</span></h2>
+                <p class="desc-text">Queres fazer parte da minha Gang? Entra no Discord e faz recrutamento no site da Gang.</p>
+                <a href="https://discord.gg/Kuzhu6dNv" target="_blank" class="action-btn discord">Entrar</a>
             </div>
         </section>
 
         <section id="skin" class="page">
-            <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
-            <h2>Galeria de <span class="red-text">Skins</span></h2>
-            <p class="subtitle">A minha skin do ATHOS Pvp.</p>
             <div class="info-box">
+                <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
+                <p class="subtitle">A minha skin atual.</p>
+                <p class="desc-text">Vê os detalhes da minha skin de ATHOS PvP.</p>
             </div>
         </section>
 
         <section id="tiktok" class="page">
-            <h2>Vídeo em <span class="red-text">Destaque</span></h2>
-            <p class="subtitle">O meu clipe mais recente diretamente do TikTok</p>
-            <div class="tiktok-wrapper">
-                <iframe height="578" width="325" src="https://www.tiktok.com/player/v1/7705437248279383318?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" title="Video 1(1)" allowfullscreen loading="lazy"></iframe>
+            <div class="info-box wide-box">
+                <h2>Vídeo em <span class="red-text">Destaque</span></h2>
+                <p class="subtitle">O meu clipe mais recente diretamente do TikTok</p>
+                <div class="tiktok-wrapper">
+                    <iframe height="578" width="325" src="https://www.tiktok.com/player/v1/7705437248279383318?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" title="Video 1(1)" allowfullscreen loading="lazy"></iframe>
+                </div>
             </div>
         </section>
 
@@ -117,17 +121,14 @@
 
     <script>
         function mudarPagina(idPagina, botaoClicado = null) {
-            // Esconde todas as páginas
             const paginas = document.querySelectorAll('.page');
             paginas.forEach(p => p.classList.remove('active'));
 
-            // Mostra apenas a página escolhida
             document.getElementById(idPagina).classList.add('active');
 
-            // Atualiza o destaque no menu de cima
-            const botoes = document.querySelectorAll('.nav-btn');
-            botoes.forEach(b => b.classList.remove('active'));
             if (botaoClicado) {
+                const botoes = document.querySelectorAll('.nav-btn');
+                botoes.forEach(b => b.classList.remove('active'));
                 botaoClicado.classList.add('active');
             }
         }
