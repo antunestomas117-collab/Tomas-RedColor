@@ -15,7 +15,7 @@
         <nav>
             <button class="nav-btn active" onclick="mudarPagina('inicio', this)">Início</button>
             <button class="nav-btn" onclick="mudarPagina('tiktok', this)">Vídeos</button>
-            <button class="nav-btn" onclick="mudarPagina('perfil', this)">Redes Sociais</button>
+            <button class="nav-btn" onclick="mudarPagina('perfil', this)">Redes</button>
             <button class="nav-btn" onclick="mudarPagina('sugestoes', this)">Sugestões</button>
         </nav>
     </header>
@@ -37,6 +37,7 @@
                     <span>Explorar &rarr;</span>
                 </div>
 
+                <!-- Gang (Clica abre a página) -->
                 <div class="category-card" onclick="mudarPagina('gang')">
                     <div class="card-img-wrapper">
                         <img src="gang.png.png" alt="Gang">
@@ -46,8 +47,8 @@
                 </div>
 
                 <div class="category-card" onclick="mudarPagina('skin')">
-                    <div class="card-img-wrapper">
-                        <img src="skin.png.png" alt="Skin">
+                    <div class="card-img-wrapper skin-wrapper">
+                        <img src="skin.png.png" alt="Skin" class="skin-img">
                     </div>
                     <h3>SKIN</h3>
                     <span>Explorar &rarr;</span>
@@ -61,7 +62,7 @@
                 <h2>Área do <span class="red-text">Server</span></h2>
                 <p class="subtitle">Acesso direto ao servidor oficial.</p>
                 <p class="desc-text">Entra na comunidade do Discord do ATHOS PvP para ficares a par de todas as novidades do servidor.</p>
-                <a href="https://discord.gg/xYn4Wjnp7" target="_blank" class="action-btn discord">Entrar no Discord do Server</a>
+                <a href="https://discord.gg/xYn4Wjnp7" target="_blank" class="action-btn discord">Entrar no Discord do ATHOS PvP</a>
             </div>
         </section>
 
@@ -69,16 +70,8 @@
             <div class="info-box">
                 <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
                 <h2>Área da <span class="red-text">Gang</span></h2>
-                <p class="desc-text">Queres fazer parte da minha Gang? Entra no Discord e faz recrutamento no site da Gang.</p>
-                <a href="https://discord.gg/Kuzhu6dNv" target="_blank" class="action-btn discord">Entrar</a>
-            </div>
-        </section>
-
-        <section id="skin" class="page">
-            <div class="info-box">
-                <button class="back-btn" onclick="mudarPagina('inicio')">&larr; Voltar ao Início</button>
-                <p class="subtitle">A minha skin atual.</p>
-                <p class="desc-text">Vê os detalhes da minha skin de ATHOS PvP.</p>
+                <p class="desc-text">Queres fazer parte da minha Gang? Entra no Discord e candidata-te.</p>
+                <a href="https://discord.gg/Kuzhu6dNv" target="_blank" class="action-btn discord">Discord</a>
             </div>
         </section>
 
@@ -94,7 +87,7 @@
 
         <section id="perfil" class="page">
             <div class="profile-card">
-                <img src="perfil.png" alt="Tomas RedColor" class="main-avatar">
+                <img src="perfil.png.png" alt="Tomas RedColor" class="main-avatar">
                 <h2>Tomas <span class="red-text">RedColor</span></h2>
                 <p class="subtitle">Criador de conteúdo & Gaming. Acompanha-me nas redes oficiais e na minha comunidade do Discord:</p>
                 
@@ -112,8 +105,8 @@
         <section id="sugestoes" class="page">
             <div class="profile-card">
                 <h2>Caixa de <span class="red-text">Sugestões</span></h2>
-                <p class="subtitle">Tens alguma ideia para um vídeo, melhoria para o site ou sugestão de servidores de pvp?</p>
-                <a href="antunestomas117@gmail.com" class="action-btn">💡 Enviar Sugestão</a>
+                <p class="subtitle">Tens alguma ideia para um vídeo, melhoria para o site ou sugestão de servidores de PvP?</p>
+                <a href="https://forms.gle/yPnNP7JDLFtYnnqs8" target="_blank" class="action-btn discord">💡 Enviar Sugestão</a>
             </div>
         </section>
 
